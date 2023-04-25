@@ -1,0 +1,26 @@
+<nav class="navbar">
+   <div class="container">
+    <div class="superior">
+      <div class="ui-g">
+        <div class="ui-g-12">
+           <a href="javascript:;" class="navbar-toggle" (click)="exibindoMenu = !exibindoMenu"><h1>Menu</h1></a>
+          
+        </div>
+      </div>
+   
+     
+
+
+    </div>   
+</div>
+
+
+<ul class="navbar-menu" [hidden]="!exibindoMenu">
+   <li class="navbar-usuario">Ronaldo Pires</li> 
+   <li class="navbar-menuintem"><a href="#">Jogos</a></li>
+   <li class="navbar-menuintem"><a href="#">Resultados</a></li>
+   <li class="navbar-menuintem"><a href="#">Logout </a></li>
+</ul>
+
+
+</nav>

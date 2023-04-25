@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="superior">
+      <div class="ui-g">
+    
+        <form autocomplete="off" (ngSubmit)="pesquisar()">
+
+      <div class="ui-g-12">
+        <h1>Meus jogos</h1>
+      </div>
+    <div class="ui-g-12">
+      <label style="display: block"> Numero do concuso </label>
+      <input type="number" style="width: 85px" name="concurso"
+      [(ngModel)]="concurso">
+      
+    </div>
+     
+    <div class="ui-g-12">
+     
+      <button pButton type="submit" label="Conferir" (click)="pesquisar()" ></button>
+      
+    </div>
+  </form>
+    </div>
+    </div>
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <p-table [value]="numeros" [tableStyle]="{ 'min-width': '50rem' }" [responsive]="true">
+          <ng-template pTemplate="header">
+              <tr>
+                  
+                  <th class="col-numeroConcurso">Numero do concurso</th>
+                  <th class="col-quantidadeAcertos">Numeros</th>
+                  <th class="col-jogoDe">Jogo de </th>
+                  <th class="col-acoes"></th>
+                  <th class="col-acoes"></th>
+                                    
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-numeros>
+              <tr>
+                  
+                  <td class="col-numeroConcurso">{{ numeros.numeroConcurso }}</td>
+                  <td class="col-quantidadeAcertos">{{ numeros.list}}</td>
+                  <td class="col-jogoDe">{{ numeros.numerosJogados}}</td>
+                  <td class="col-acoes"><a pButton icon="fa fa-pencil" ></a></td>
+                  <td class="col-acoes"><button pButton icon="fa fa-trash" 
+                    (click)="confirmarExclusao(numeros)"></button></td>
+                  
+              </tr>
+          </ng-template>
+      </p-table>
+      </div>
+    
+    </div>
+    </div>
+    
+

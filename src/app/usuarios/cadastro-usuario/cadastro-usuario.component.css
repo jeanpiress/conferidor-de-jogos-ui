@@ -1,0 +1,31 @@
+.ui-g-12{
+    padding-bottom: 15px;
+  }
+
+.nome-margin {
+    margin-right: 1px;
+    margin-left: 81px;
+    padding: 8px;
+}
+
+.email-margin {
+    margin-right: 5px;
+    margin-left: 79px;
+    padding: 8px;
+}
+.conf-email-margin {
+    margin-right: 5px;
+    padding: 8px;
+}
+
+.senha-margin {
+    margin-right: 0px;
+    padding: 8px;
+    margin-left: 79px;
+}
+
+.conf-senha-margin {
+    margin-right: 0px;
+    padding: 8px;
+    
+}
