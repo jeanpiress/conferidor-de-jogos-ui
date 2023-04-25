@@ -7,13 +7,20 @@
       </div>
     <div class="ui-g-12">
       <label style="display: block"> Numero do concuso </label>
-      <input type="number" style="width: 85px">
+      <input type="number" style="width: 85px" name="concurso"
+      [(ngModel)]="concurso">
+      
+    </div>
+
+    <div class="ui-g-12">
+      <label style="display: block"> Numero do id </label>
+      <input type="number" style="width: 85px" [(ngModel)]="usuario" name="usuario">
       
     </div>
      
     <div class="ui-g-12">
      
-      <button pButton type="submit" label="Conferir" ></button>
+      <button pButton type="submit" label="Conferir" (click)="pesquisarBatidos()"></button>
       
     </div>
     
@@ -21,7 +28,7 @@
     </div>
     <div class="ui-g">
       <div class="ui-g-12">
-        <p-table [value]="lancamentos" [tableStyle]="{ 'min-width': '50rem' }" [responsive]="true">
+        <p-table [value]="numerosBatidos" [tableStyle]="{ 'min-width': '50rem' }" [responsive]="true">
           <ng-template pTemplate="header">
               <tr>
                   <th>Numero do councurso</th>
@@ -30,11 +37,11 @@
                   
               </tr>
           </ng-template>
-          <ng-template pTemplate="body" let-lancamentos>
+          <ng-template pTemplate="body" let-numerosBatidos>
               <tr>
-                  <td>{{ lancamentos.numeroConcurso }}</td>
-                  <td>{{ lancamentos.numerosBatidos }}</td>
-                  <td>{{ lancamentos.totalAcertos }}</td>
+                  <td>{{ numerosBatidos.numeroConcurso }}</td>
+                  <td>{{ numerosBatidos.list }}</td>
+                  <td>{{ numerosBatidos.acertos }}</td>
                   
               </tr>
           </ng-template>

@@ -17,6 +17,8 @@ export class JogosService {
 
   jogoConcursoUrl = 'http://localhost:8080/jogos/concurso';
   jogoUrl = 'http://localhost:8080/jogos';
+  finaisURL = 'http://localhost:8080/finais';
+  
 
    constructor(private http: HttpClient) { }
        
@@ -51,7 +53,20 @@ excluir(codigo: number) : Observable<void>{
   .pipe(map(() => {}));
 }     
    
+pesquisarBatidos(filtro: any): Observable<any>{
+  const params = new HttpParams();
+  const headers = new HttpHeaders().set('Authorization', 'Basic amVhbkBnbWFpbDpzZW5oYTEyMw==');
+  
+  
+    params.set('concurso', filtro.concurso).set('usuario', filtro.usuario);
+    
+  
+  
+  return this.http.get(`${this.finaisURL}/concurso/${filtro.concurso}/usuario/${filtro.usuario}`, { headers, params })
+  .pipe(map((response: any) => response));
+ 
 
+}
 
 
 }
