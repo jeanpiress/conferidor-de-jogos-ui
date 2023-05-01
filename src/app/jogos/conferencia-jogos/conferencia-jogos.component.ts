@@ -19,6 +19,7 @@ export class ConferenciaJogosComponent {
   pesquisarBatidos(){
     this.jogosService.pesquisarBatidos({concurso: this.concurso, usuario: this.usuario})
        .subscribe(numerosBatidos => this.numerosBatidos = numerosBatidos);
+       
   }
 
 

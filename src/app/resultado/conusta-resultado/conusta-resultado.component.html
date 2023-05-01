@@ -1,13 +1,14 @@
 <div class="container">
     <div class="superior">
       <div class="ui-g">
-    
+        <form autocomplete="off" (ngSubmit)="pesquisarResultado()">
       <div class="ui-g-12">
         <h1>Resultado do concurso</h1>
       </div>
     <div class="ui-g-12">
       <label style="display: block"> Numero do concuso </label>
-      <input type="number" style="width: 85px">
+      <input type="number" style="width: 85px"  name="concurso"
+      [(ngModel)]="concurso">
       
     </div>
      
@@ -16,12 +17,12 @@
       <button pButton type="submit" label="Conferir" ></button>
       
     </div>
-    
+  </form>
     </div>
     </div>
-    <div class="ui-g">
+    <div class="ui-g" *ngIf="mostrarTabela">
       <div class="ui-g-12">
-        <p-table [value]="numeros" [tableStyle]="{ 'min-width': '50rem' }" [responsive]="true">
+        <p-table [value] ="[numeros]" [tableStyle]="{ 'min-width': '50rem' }" [responsive]="true">
           <ng-template pTemplate="header">
               <tr>
                   <th>Numero do councurso</th>
@@ -32,7 +33,8 @@
           <ng-template pTemplate="body" let-numeros>
               <tr>
                   <td>{{ numeros.numeroConcurso }}</td>
-                  <td>{{ numeros.resultado }}</td>
+                  <td>{{ numeros.list }}</td>
+                
                   
                   
               </tr>

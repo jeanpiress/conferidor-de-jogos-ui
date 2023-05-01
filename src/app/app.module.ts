@@ -16,6 +16,8 @@ import { UsuariosModule } from './usuarios/usuarios.module';
 import { ResultadoModule } from './resultado/resultado.module';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ResultadosService } from './resultado/resultados.service';
+import { UsuarioService } from './usuarios/usuario.service';
 
 
 @NgModule({
@@ -33,10 +35,12 @@ import { HttpClientModule } from '@angular/common/http';
     JogosModule,
     UsuariosModule,
     ResultadoModule,
+    UsuariosModule,
     CoreModule
    ],
   providers: [
-    
+    ResultadosService,
+    UsuarioService
     
   ],
   bootstrap: [AppComponent]

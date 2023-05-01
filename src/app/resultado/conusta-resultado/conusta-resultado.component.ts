@@ -1,15 +1,46 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ResultadosService } from '../resultados.service';
+
+
+export class Resultado{
+
+ 
+  numeroConcurso: number = 0;
+  list:number[] = [];
+ 
+  
+  
+  }
+  
+
 
 @Component({
   selector: 'app-conusta-resultado',
   templateUrl: './conusta-resultado.component.html',
   styleUrls: ['./conusta-resultado.component.css']
 })
-export class ConustaResultadoComponent {
+export class ConustaResultadoComponent implements OnInit{
   title = 'conferidor-jogos-ui';
-  numeros = [
+  mostrarTabela: boolean = false;
+  concurso = null;
+  numeros =  new Resultado();
+
+constructor(
+  private resultadosService: ResultadosService
   
-     { numeroConcurso: '2320', resultado: '1, 2, 4, 6, 8, 9, 10, 12, 15, 16, 17, 19, 22, 23, 25'},
+  
+  ) {}
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+  
+
+pesquisarResultado(){
+  this.mostrarTabela = true;
+    this.resultadosService.pesquisarResultado({concurso: this.concurso})
+     .subscribe(numeros => this.numeros = numeros);
      
-  ];
+     
+}
+
 }

@@ -13,6 +13,7 @@ import { ConfirmationService } from 'primeng/api';
 export class MeusJogosComponent implements OnInit {
   title = 'conferidor-jogos-ui';
   concurso = null;
+  usuario = null;
   numeros = [];
 
   constructor(
@@ -26,7 +27,7 @@ export class MeusJogosComponent implements OnInit {
   }
 
   pesquisar(){
-    this.jogosService.pesquisar({concurso: this.concurso})
+    this.jogosService.pesquisar({concurso: this.concurso, usuario: this.usuario})
        .subscribe(numeros => this.numeros = numeros);
   }
 

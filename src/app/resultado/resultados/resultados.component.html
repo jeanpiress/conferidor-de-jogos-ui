@@ -1,5 +1,7 @@
 <div class="container">
     <div class="superior">
+      <form #usuarioForm="ngForm" (ngSubmit)="salvarResultado(usuarioForm)">
+      
       <div class="ui-g">
     
       <div class="ui-g-12">
@@ -7,40 +9,40 @@
       </div>
     <div class="ui-g-12">
       <label> Numero do concuso </label>
-      <input type="number" style="width: 85px">
+      <input type="number" style="width: 85px" [(ngModel)]="resultadoCadastro.numeroConcurso" name="numeroConcurso">
       
     </div>
 
     <div class="ui-g-12">
-        <p-checkbox class="cadastro-boton" name="groupname" value="val1" label="1  " ></p-checkbox>
-        <p-checkbox class="cadastro-boton" name="groupname" value="val2" label="2  " ></p-checkbox>
-        <p-checkbox class="cadastro-boton3" name="groupname" value="val3" label="3  " ></p-checkbox>
-        <p-checkbox class="cadastro-boton" name="groupname" value="val4" label="4  " ></p-checkbox>
-        <p-checkbox class="cadastro-boton" name="groupname" value="val5" label="5  " ></p-checkbox>
+        <p-checkbox class="cadastro-boton" name="groupname" value= 1 label= 1  [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton" name="groupname" value= 2 label= 2  [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton3" name="groupname" value= 3 label= 3  [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton" name="groupname" value= 4 label= 4  [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton" name="groupname" value= 5 label= 5 [(ngModel)]="resultadoCadastro.list" ></p-checkbox>
         <br>
-        <p-checkbox class="cadastro-boton" name="groupname" value="val6" label="6  " ></p-checkbox>
-        <p-checkbox class="cadastro-boton" name="groupname" value="val7" label="7  " ></p-checkbox>
-        <p-checkbox class="cadastro-boton3" name="groupname" value="val8" label="8  " ></p-checkbox>
-        <p-checkbox class="cadastro-boton" name="groupname" value="val9" label="9  " ></p-checkbox>
-        <p-checkbox class="cadastro-boton" name="groupname" value="val10" label="10" ></p-checkbox>
+        <p-checkbox class="cadastro-boton" name="groupname" value= 6 label= 6 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton" name="groupname" value= 7 label= 7 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton3"name="groupname" value= 8 label= 8 [(ngModel)]="resultadoCadastro.list" ></p-checkbox>
+        <p-checkbox class="cadastro-boton" name="groupname" value= 9 label= 9 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton" name="groupname" value= 10 label= 10 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
         <br>
-        <p-checkbox class="cadastro-boton2" name="groupname" value="val11" label="11" ></p-checkbox>
-        <p-checkbox class="cadastro-boton2" name="groupname" value="val12" label="12" ></p-checkbox>
-        <p-checkbox class="cadastro-boton2" name="groupname" value="val13" label="13" ></p-checkbox>
-        <p-checkbox class="cadastro-boton2" name="groupname" value="val14" label="14" ></p-checkbox>
-        <p-checkbox class="cadastro-boton2" name="groupname" value="val15" label="15" ></p-checkbox>
+        <p-checkbox class="cadastro-boton2" name="groupname" value= 11 label= 11 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton2" name="groupname" value= 12 label= 12 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton2" name="groupname" value= 13 label= 13 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton2" name="groupname" value= 14 label= 14 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton2" name="groupname" value= 15 label= 15 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
         <br>
-        <p-checkbox class="cadastro-boton2" name="groupname" value="val16" label="16" ></p-checkbox>
-        <p-checkbox class="cadastro-boton2" name="groupname" value="val17" label="17" ></p-checkbox>
-        <p-checkbox class="cadastro-boton2" name="groupname" value="val18" label="18" ></p-checkbox>
-        <p-checkbox class="cadastro-boton2" name="groupname" value="val19" label="19" ></p-checkbox>
-        <p-checkbox class="cadastro-boton2" name="groupname" value="val20" label="20" ></p-checkbox>
+        <p-checkbox class="cadastro-boton2" name="groupname" value= 16 label= 16 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton2" name="groupname" value= 17 label= 17 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton2" name="groupname" value= 18 label= 18 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton2" name="groupname" value= 19 label= 19 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton2" name="groupname" value= 20 label= 20 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
         <br>
-        <p-checkbox class="cadastro-boton2" name="groupname" value="val21" label="21" ></p-checkbox>
-        <p-checkbox class="cadastro-boton2" name="groupname" value="val22" label="22" ></p-checkbox>
-        <p-checkbox class="cadastro-boton2" name="groupname" value="val23" label="23" ></p-checkbox>
-        <p-checkbox class="cadastro-boton2" name="groupname" value="val24" label="24" ></p-checkbox>
-        <p-checkbox class="cadastro-boton2" name="groupname" value="val25" label="25" ></p-checkbox>
+        <p-checkbox class="cadastro-boton2" name="groupname" value= 21 label= 21 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton2" name="groupname" value= 22 label= 22 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton2" name="groupname" value= 23 label= 23 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton2" name="groupname" value= 24 label= 24 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
+        <p-checkbox class="cadastro-boton2" name="groupname" value= 25 label= 25 [(ngModel)]="resultadoCadastro.list"></p-checkbox>
         <br>
         <br>
         
@@ -52,8 +54,11 @@
       
     </div>
     
+    
     </div>
+  </form>
     </div>
+    
    
     </div>
     

@@ -15,7 +15,7 @@ import { Jogo } from './cadastro-jogos/cadastro-jogos.component';
 })
 export class JogosService {
 
-  jogoConcursoUrl = 'http://localhost:8080/jogos/concurso';
+  
   jogoUrl = 'http://localhost:8080/jogos';
   finaisURL = 'http://localhost:8080/finais';
   
@@ -27,10 +27,10 @@ export class JogosService {
     const headers = new HttpHeaders().set('Authorization', 'Basic amVhbkBnbWFpbDpzZW5oYTEyMw==');
     
     
-      params.set('concurso', filtro.concurso);
+    params.set('concurso', filtro.concurso).set('usuario', filtro.usuario);
     
     
-    return this.http.get(`${this.jogoConcursoUrl}/${filtro.concurso}`, { headers, params })
+    return this.http.get(`${this.jogoUrl}/concurso/${filtro.concurso}/usuario/${filtro.usuario}`, { headers, params })
     .pipe(map((response: any) => response));
    
 
