@@ -24,49 +24,59 @@ export class JogosService {
        
   pesquisar(filtro: any): Observable<any>{
     const params = new HttpParams();
-    const headers = new HttpHeaders().set('Authorization', 'Basic amVhbkBnbWFpbDpzZW5oYTEyMw==');
-    
+     
     
     params.set('concurso', filtro.concurso).set('usuario', filtro.usuario);
     
     
-    return this.http.get(`${this.jogoUrl}/concurso/${filtro.concurso}/usuario/${filtro.usuario}`, { headers, params })
+    return this.http.get(`${this.jogoUrl}/concurso/${filtro.concurso}/usuario/${filtro.usuario}`, { params })
     .pipe(map((response: any) => response));
    
 
   }
 
   adicionar(jogo: Jogo) : Observable<Jogo>{
-    let headers = new HttpHeaders().set('Authorization', 'Basic amVhbkBnbWFpbDpzZW5oYTEyMw==');
-    headers = headers.set('content-Type', 'application/json');
-   
-    return this.http.post(this.jogoUrl, JSON.stringify(jogo), {headers})
+    return this.http.post(this.jogoUrl, jogo)
     .pipe(map((response: any) => response));
     
   }
 
 excluir(codigo: number) : Observable<void>{
-   const headers = new HttpHeaders().set('Authorization', 'Basic amVhbkBnbWFpbDpzZW5oYTEyMw==');
-  
+   
 
-  return this.http.delete(`${this.jogoUrl}/${codigo}`, { headers })
+  return this.http.delete(`${this.jogoUrl}/${codigo}`)
   .pipe(map(() => {}));
 }     
    
 pesquisarBatidos(filtro: any): Observable<any>{
   const params = new HttpParams();
-  const headers = new HttpHeaders().set('Authorization', 'Basic amVhbkBnbWFpbDpzZW5oYTEyMw==');
   
   
     params.set('concurso', filtro.concurso).set('usuario', filtro.usuario);
     
   
   
-  return this.http.get(`${this.finaisURL}/concurso/${filtro.concurso}/usuario/${filtro.usuario}`, { headers, params })
+  return this.http.get(`${this.finaisURL}/concurso/${filtro.concurso}/usuario/${filtro.usuario}`, { params })
   .pipe(map((response: any) => response));
  
 
 }
 
+pesquisarPorId(id: number): Observable<any>{
+    
+  
+  return this.http.get(`${this.jogoUrl}/id/${id}`)
+  .pipe(map((response: any) => response));
+ 
+
+}
+
+atualizar(jogo: Jogo) : Observable<Jogo>{
+  
+ 
+  return this.http.put(`${this.jogoUrl}/id/${jogo.usuario.id}`, jogo)
+  .pipe(map((response: any) => response));
+  
+}
 
 }

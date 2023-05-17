@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar *ngIf="exibirNavbar()"></app-navbar>
 
 
 
@@ -12,12 +12,6 @@
     </p-footer>
 </p-confirmDialog>
 
+<router-outlet></router-outlet>
 
-<app-cadastro-usuario></app-cadastro-usuario>
 
-<!-- 
-    <app-resultados></app-resultados>
-   <app-conferencia-jogos></app-conferencia-jogos>  
-   <app-conusta-resultado></app-conusta-resultado> 
-   <app-cadastro-jogos></app-cadastro-jogos> 
-    pronto -->

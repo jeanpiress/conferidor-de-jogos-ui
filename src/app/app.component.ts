@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 
@@ -11,7 +12,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   isHidden = true;
 
+  constructor(
+private router: Router
+  ){}
+
   toggleClass() {
     this.isHidden = !this.isHidden;
+  }
+
+  exibirNavbar(){
+    return this.router.url !== '/login';
   }
 }

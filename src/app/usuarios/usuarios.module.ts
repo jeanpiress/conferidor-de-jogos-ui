@@ -23,6 +23,6 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
     FormsModule,
     InputTextModule
   ],
-  exports:[CadastroUsuarioComponent]
+  exports:[]
 })
 export class UsuariosModule { }

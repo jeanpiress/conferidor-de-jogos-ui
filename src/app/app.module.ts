@@ -18,6 +18,17 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ResultadosService } from './resultado/resultados.service';
 import { UsuarioService } from './usuarios/usuario.service';
+import { RouterModule, Routes } from '@angular/router';
+import { MeusJogosComponent } from './jogos/meus-jogos/meus-jogos.component';
+import { CadastroJogosComponent } from './jogos/cadastro-jogos/cadastro-jogos.component';
+import { CadastroUsuarioComponent } from './usuarios/cadastro-usuario/cadastro-usuario.component';
+import { ResultadosComponent } from './resultado/resultados/resultados.component';
+import { ConferenciaJogosComponent } from './jogos/conferencia-jogos/conferencia-jogos.component';
+import { ConustaResultadoComponent } from './resultado/conusta-resultado/conusta-resultado.component';
+import { PaginaNaoEncontradaComponent } from './core/pagina-nao-encontrada.component';
+import { SegurancaModule } from './seguranca/seguranca.module';
+import { JwtModule } from '@auth0/angular-jwt';
+
 
 
 @NgModule({
@@ -28,6 +39,17 @@ import { UsuarioService } from './usuarios/usuario.service';
     FormsModule,
     HttpClientModule,
 
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('access_token');
+        },
+        allowedDomains: ['localhost:8080'],
+        disallowedRoutes: []
+      }
+    }),
+    
+
     BrowserAnimationsModule,
     MatSnackBarModule,
     
@@ -36,7 +58,9 @@ import { UsuarioService } from './usuarios/usuario.service';
     UsuariosModule,
     ResultadoModule,
     UsuariosModule,
-    CoreModule
+    SegurancaModule,
+    CoreModule,
+    AppRoutingModule
    ],
   providers: [
     ResultadosService,

@@ -31,17 +31,45 @@
     color: #fff;
 }
 
-.navbar-menuintem {
+.navbar-menuitem {
     padding: 15px;
 
 }
 
-.navbar-menuintem a{
+.navbar-menuitem a{
     color: #c0bbb7;
     text-decoration: none;
 }
 
-.navbar-menuintem a:hover{
+.navbar-menuitem a:hover{
     color:#fff
+
+}
+.navbar-menuadmin {
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    
+    margin: 10px;
+
+}
+
+.navbar-menuadmin a{
+    color: #c0bbb7;
+    text-decoration: none;
+}
+
+.navbar-menuadmin a:hover{
+    color:#fff
+
+}
+
+.navbar-menuitem.ativo {
+    background-color: #494541;
+
+}
+
+.navbar-menuadmin.ativo {
+    background-color: #494541;
 
 }

@@ -21,23 +21,20 @@ export class ResultadosService {
 
   pesquisarResultado(filtro: any): Observable<any>{
     const params = new HttpParams();
-    const headers = new HttpHeaders().set('Authorization', 'Basic amVhbkBnbWFpbDpzZW5oYTEyMw==');
     
     
     params.set('concurso', filtro.concurso);
     
     
-    return this.http.get(`${this.resultadosUrl}/concurso/${filtro.concurso}`, { headers, params })
+    return this.http.get(`${this.resultadosUrl}/concurso/${filtro.concurso}`, { params })
     .pipe(map((response: any) => response));
    
 
   }
 
   adicionarResultado(resultado: ResultadoCadastro) : Observable<ResultadoCadastro>{
-    let headers = new HttpHeaders().set('Authorization', 'Basic amVhbkBnbWFpbDpzZW5oYTEyMw==');
-    headers = headers.set('content-Type', 'application/json');
-   
-    return this.http.post(this.resultadosUrl, JSON.stringify(resultado), {headers})
+  
+    return this.http.post(this.resultadosUrl, resultado)
     .pipe(map((response: any) => response));
     
   }

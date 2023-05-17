@@ -14,13 +14,14 @@
       
     </div>
 
+    <!--
     <div class="ui-g-12">
       <label style="display: block"> Usuario </label>
       <input type="number" style="width: 85px" name="usuario"
       [(ngModel)]="usuario">
       
     </div>
-     
+    -->
     <div class="ui-g-12">
      
       <button pButton type="submit" label="Conferir" (click)="pesquisar()" ></button>
@@ -49,7 +50,6 @@
                   <td class="col-numeroConcurso">{{ numeros.numeroConcurso }}</td>
                   <td class="col-quantidadeAcertos">{{ numeros.list}}</td>
                   <td class="col-jogoDe">{{ numeros.numerosJogados}}</td>
-                  <td class="col-acoes"><a pButton icon="fa fa-pencil" ></a></td>
                   <td class="col-acoes"><button pButton icon="fa fa-trash" 
                     (click)="confirmarExclusao(numeros)"></button></td>
                   

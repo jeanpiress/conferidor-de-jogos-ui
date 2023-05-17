@@ -12,6 +12,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table'
 import { CheckboxModule } from 'primeng/checkbox';
+import { RouterModule } from '@angular/router';
+import { AuthService } from '../seguranca/auth.service';
+import { SegurancaModule } from '../seguranca/seguranca.module';
 
 
 
@@ -22,7 +25,8 @@ import { CheckboxModule } from 'primeng/checkbox';
   declarations: [
     CadastroJogosComponent,
     ConferenciaJogosComponent,
-    MeusJogosComponent
+    MeusJogosComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -32,12 +36,14 @@ import { CheckboxModule } from 'primeng/checkbox';
     TableModule,
     CheckboxModule,
     InputTextModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    SegurancaModule
+
+    
   ],
   exports: [
-    CadastroJogosComponent,
-    ConferenciaJogosComponent,
-    MeusJogosComponent
+   
   ]
 
 })

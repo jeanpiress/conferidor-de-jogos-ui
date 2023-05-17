@@ -19,10 +19,9 @@ export class UsuarioService {
 
 
   adicionarUsuario(usuario: Usuario) : Observable<Usuario>{
-    let headers = new HttpHeaders().set('Authorization', 'Basic amVhbkBnbWFpbDpzZW5oYTEyMw==');
-    headers = headers.set('content-Type', 'application/json');
    
-    return this.http.post(this.usuarioUrl, JSON.stringify(usuario), {headers})
+   
+    return this.http.post(this.usuarioUrl, usuario)
     .pipe(map((response: any) => response));
     
   }

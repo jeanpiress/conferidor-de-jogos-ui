@@ -1,29 +1,29 @@
-<div class="container">
-    <div class="superior">
-      
+<div class="container" style="max-width: 400px; margin: auto">
+  <div class="superior">
       
 
         <form #usuarioForm="ngForm" (ngSubmit)="salvarUsuario(usuarioForm)">
-        <div class="ui-g">
+        <div class="grid">
     
-      <div class="ui-g-12">
-        <h1>Cadastro de usuario</h1>
-      </div>
-    <div class="ui-g-12">
-      <label class="nome-margin"> Nome </label>
-      <input type="text" style="width: 480px"  name="nome" [(ngModel)]="usuario.nome" required>
+          <div class="col-12 p-fluid">
+            <h1><strong> Cadastro de Usuario </strong></h1>
+        </div>
+
+    <div class="col-12 p-fluid">
+      
+      <input type="text" placeholder="Nome" style="width: 480px"  name="nome" [(ngModel)]="usuario.nome" required>
       <br>
       <br>
             
-      <label class="email-margin"> Email </label>
-      <input type="text" style="width: 480px" name="email" [(ngModel)]="usuario.email" required email>
+      
+      <input type="text" placeholder="E-mail" style="width: 480px" name="email" [(ngModel)]="usuario.email" required email>
       <br>
       <br>
 
       
       
-      <label class="senha-margin"> Senha </label>
-      <input type="text" style="width: 150px" name="senha" [(ngModel)]="usuario.senha" required>
+      
+      <input type="text" placeholder="Senha" style="width: 480px" name="senha" [(ngModel)]="usuario.senha" required>
       <br>
       <br>
 
@@ -39,8 +39,5 @@
     
     </div>
 </form>
-    </div>
-   
-    </div>
-    
-
+  </div>
+</div>

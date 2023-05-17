@@ -28,8 +28,7 @@ import { InputTextModule } from 'primeng/inputtext';
     InputTextModule,
   ],
   exports:[
-    ConustaResultadoComponent,
-    ResultadosComponent
+   
   ]
 })
 export class ResultadoModule { }

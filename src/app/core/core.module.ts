@@ -9,11 +9,17 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { JogosService } from './../jogos/jogos.service';
 import { ConfirmationService } from 'primeng/api';
+import { RouterModule } from '@angular/router';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
+import { Title } from '@angular/platform-browser';
+import { MenuComponent } from './menu/menu.component';
+import { AuthService } from '../seguranca/auth.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 
 
 @NgModule({
-  declarations: [NavbarComponent],
+  declarations: [NavbarComponent, PaginaNaoEncontradaComponent, MenuComponent],
   exports:[
     NavbarComponent,
     ConfirmDialogModule,
@@ -22,6 +28,7 @@ import { ConfirmationService } from 'primeng/api';
   ],
   imports: [
     CommonModule,
+    RouterModule,
 
     ConfirmDialogModule,
     BrowserAnimationsModule,
@@ -30,7 +37,10 @@ import { ConfirmationService } from 'primeng/api';
   providers:[
     ErrorHandlerService,
     ConfirmationService,
-    JogosService
+    Title,
+    JogosService,
+    AuthService,
+    JwtHelperService
   ]
 })
 export class CoreModule { }

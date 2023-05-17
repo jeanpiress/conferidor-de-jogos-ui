@@ -16,10 +16,13 @@
 
 
 <ul class="navbar-menu" [hidden]="!exibindoMenu">
-   <li class="navbar-usuario">Ronaldo Pires</li> 
-   <li class="navbar-menuintem"><a href="#">Jogos</a></li>
-   <li class="navbar-menuintem"><a href="#">Resultados</a></li>
-   <li class="navbar-menuintem"><a href="#">Logout </a></li>
+   <li class="navbar-usuario">{{auth.jwtPayload?.user_info.nome}}</li> 
+   <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/jogos">Meus jogos</a></li>
+   <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/jogo/novo">Novo jogo</a></li>
+   <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/resultados">Resultados</a></li>
+   <li class="navbar-menuitem" routerLinkActive="ativo" ><a routerLink="/conferir">Conferencia</a></li>
+   <li class="navbar-menuadmin" routerLinkActive="ativo" *ngIf="auth.temPermissao('ROLE_ADMIN')"><a routerLink="/resultado/novo">Admim</a></li>
+   <li class="navbar-menuitem" routerLinkActive="ativo"><a href="#">Logout </a></li>
 </ul>
 
 

@@ -37,11 +37,19 @@ label {
     margin: 15px;
    }
 
+   .login {
+    width: 700px; 
+    margin-left: auto;
+    margin-right: auto;
+   }
+
 @media (min-whith: 1200px){
 .container {
  width: 1170px;
  margin: 0 auto;
 }
+
+
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
