@@ -1,22 +1,76 @@
-<div class="container" style="max-width: 400px;">
-    <div class="superior">
+<div class="container">
+  <div class="superior">
+    <div class="ui-g">
+  
+      <form>
 
+    <div class="ui-g-12">
+      <h1>Ultimos resultados</h1>
+    </div>
+  
+  <div class="ui-g-12">
+   
+        
+  </div>
+</form>
+  </div>
+  </div>
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-table [value]="numeros" [tableStyle]="{ 'min-width': '50rem' }" [responsive]="true">
+        <ng-template pTemplate="header">
+            <tr>
+                
+                <th class="col-numeroConcurso">Numero do concurso</th>
+                <th class="col-numeros-grande">Numeros</th>
+                <th class="col-quantidadeAcertos">Numeros primos</th>
+                <th class="col-quantidadeAcertos">Numeros pares</th>
+                <th class="col-quantidadeAcertos">Numeros impares</th>
+                
+                <th class="col-acoes"></th>
+                <th class="col-acoes"></th>
+                                  
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-numeros>
+            <tr>
+                
+                <td class="col-numeroConcurso">{{ numeros.numeroConcurso }}</td>
+                <td class="col-numeros-grande">{{ numeros.list}}</td>
+                <td class="col-quantidadeAcertos">{{ numeros.numerosPrimos}}</td>
+                <td class="col-quantidadeAcertos">{{ numeros.par}}</td>
+                <td class="col-quantidadeAcertos">{{ numeros.impar}}</td>
+                
+                
+                
+            </tr>
+        </ng-template>
+    </p-table>
+    </div>
+    
 
-<div class="ui-g-12">
-    
-    <br>
-    <button class="cadastro-boton" pButton type="submit" label="Meus Jogos" routerLink="/jogos" ></button>
-    <br>
-    <br>
-    <button class="cadastro-boton" pButton type="submit" label="Cadastrar Jogos" routerLink="/jogo/novo" ></button>
-    <br>
-    <br>
-    <button class="cadastro-boton" pButton type="submit" label="Resultados" routerLink="/resultados" ></button>
-    <br>
-    <br>
-    <button class="cadastro-boton" pButton type="submit" label="Conferir jogos" routerLink="/conferir" ></button>
-    
+    <div class="ui-g">
+      <div class="ui-g-12">
+        <p-table [value] ="[constancia]" [tableStyle]="{ 'min-width': '50rem' }" [responsive]="true">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th class="col-par-impar">Numeros repetidos ultimos nos 3 concursos</th>
+                  <th class="col-par-impar">Numeros que não repetiram nos ultimos 3 concursos</th>
+                                    
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-numeros>
+              <tr>
+                  <td class="col-par-impar">{{ constancia.numerosRepetidos }}</td>
+                  <td class="col-par-impar">{{ constancia.numerosNaoRepetidos }}</td>
+                
+                  
+                  
+              </tr>
+          </ng-template>
+      </p-table>
+  
   </div>
 
-    </div>
-</div>
+  
+  </div>

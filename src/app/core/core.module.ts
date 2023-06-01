@@ -15,11 +15,13 @@ import { Title } from '@angular/platform-browser';
 import { MenuComponent } from './menu/menu.component';
 import { AuthService } from '../seguranca/auth.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { NaoAutoriazadoComponent } from './nao-autoriazado.component';
+import { TableModule } from 'primeng/table';
 
 
 
 @NgModule({
-  declarations: [NavbarComponent, PaginaNaoEncontradaComponent, MenuComponent],
+  declarations: [NavbarComponent, PaginaNaoEncontradaComponent, MenuComponent, NaoAutoriazadoComponent],
   exports:[
     NavbarComponent,
     ConfirmDialogModule,
@@ -29,6 +31,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   imports: [
     CommonModule,
     RouterModule,
+    TableModule,
 
     ConfirmDialogModule,
     BrowserAnimationsModule,

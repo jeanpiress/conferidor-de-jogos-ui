@@ -25,12 +25,14 @@
       
       <input type="text" placeholder="Senha" style="width: 480px" name="senha" [(ngModel)]="usuario.senha" required>
       <br>
-      <br>
+      
 
       
     </div>
 
+    <div class="error" *ngIf="mensagemErro">{{ mensagemErro }}</div>
     
+    <br>
     <div class="ui-g-12">
      
       <button pButton type="submit" label="Cadastrar" [disabled]="!usuarioForm.valid"></button>

@@ -1,11 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { JogosService } from '../jogos.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/seguranca/auth.service';
-
-
 
 
 
@@ -34,26 +32,27 @@ export class Jogo{
 export class CadastroJogosComponent implements OnInit{
   
   jogo = new Jogo();
+ 
+  
 
 constructor(
   private JogosService: JogosService,
   private snackBar: MatSnackBar,
   private route: ActivatedRoute,
-  private auth: AuthService
+  private auth: AuthService,
+  private router: Router
   
 
 ){}
 
 
+
 ngOnInit(): void {
  
   this.jogo.usuario.id = parseInt(this.auth.jwtPayload?.user_info.id);
-//  const codigoJogo = this.route.snapshot.params['id'];
- //if(codigoJogo){
- // this.carregarJogo(codigoJogo);
-// }
 
 }
+
   
 get editando(){
   return Boolean(this.jogo.usuario.id) 
@@ -63,35 +62,21 @@ get editando(){
     this.JogosService.pesquisarPorId(id)
     .subscribe(jogo => this.jogo = jogo);
       }
-  /*
-  salvar(form: NgForm) {
-if(this.editando){
-  this.atualizarJogo(form)
-}else{
-  this.adicionarJogo(form)
-}
 
-  } 
-*/
   salvar(form: NgForm){
   this.JogosService.adicionar(this.jogo)
  .subscribe(() => {this.snackBar.open('Jogo cadastrado', 'Fechar', {
   duration: 3000, // duração em milissegundos
-});})
+});}),
+
  form.reset();
+ 
  this.jogo = new Jogo();
  
 }
-/*
-atualizarJogo(form: NgForm){
-this.JogosService.atualizar(this.jogo)
-.subscribe(jogo => {this.jogo = jogo;
-  this.snackBar.open('Jogo cadastrado', 'Fechar', {
-    duration: 3000, // duração em milissegundos
-  })
-});
-}
-*/
+
+
+
 
 
 }

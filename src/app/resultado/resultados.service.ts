@@ -5,9 +5,10 @@ import { HttpParams } from '@angular/common/http';
 
 
 
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators'
+import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators'
 import { ResultadoCadastro } from './resultados/resultados.component';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,9 @@ export class ResultadosService {
 
   resultadosUrl = 'http://localhost:8080/resultados';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private router: Router) { }
 
 
   pesquisarResultado(filtro: any): Observable<any>{
@@ -27,7 +30,17 @@ export class ResultadosService {
     
     
     return this.http.get(`${this.resultadosUrl}/concurso/${filtro.concurso}`, { params })
-    .pipe(map((response: any) => response));
+    .pipe(map((response: any) => response),
+    catchError(error => {
+      if (error.status === 401) {
+        this.router.navigate(['/login']);
+      } else {
+        return throwError('Erro no servidor, tente novamente mais tarde!');
+      }
+
+      
+      return throwError(error);
+    }));
    
 
   }
@@ -35,7 +48,17 @@ export class ResultadosService {
   adicionarResultado(resultado: ResultadoCadastro) : Observable<ResultadoCadastro>{
   
     return this.http.post(this.resultadosUrl, resultado)
-    .pipe(map((response: any) => response));
+    .pipe(map((response: any) => response),
+    catchError(error => {
+      if (error.status === 401) {
+        this.router.navigate(['/login']);
+      } else {
+        return throwError('Erro no servidor, tente novamente mais tarde!');
+      }
+
+      
+      return throwError(error);
+    }));
     
   }
 

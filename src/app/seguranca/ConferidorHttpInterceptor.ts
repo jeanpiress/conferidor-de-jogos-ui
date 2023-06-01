@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
+
+import { Observable, from } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
+
+import { AuthService } from './auth.service';
 
 @Injectable()
-export class AuthInterceptor implements HttpInterceptor {
+export class ConferidorHttpInterceptor implements HttpInterceptor {
+
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = localStorage.getItem('token');
-    if (request.url.includes('http://localhost:8080/oauth/token')) {
+    if (request.url.includes('/oauth/token') || request.url.includes('/usuarios')) {
         return next.handle(request);
       } 
       

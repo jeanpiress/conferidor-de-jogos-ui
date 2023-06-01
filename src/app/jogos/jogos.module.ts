@@ -15,6 +15,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../seguranca/auth.service';
 import { SegurancaModule } from '../seguranca/seguranca.module';
+import { RepetirjogosComponent } from './repetirjogos/repetirjogos.component';
 
 
 
@@ -26,6 +27,7 @@ import { SegurancaModule } from '../seguranca/seguranca.module';
     CadastroJogosComponent,
     ConferenciaJogosComponent,
     MeusJogosComponent,
+    RepetirjogosComponent,
     
   ],
   imports: [

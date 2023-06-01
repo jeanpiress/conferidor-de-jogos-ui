@@ -14,17 +14,9 @@
       
     </div>
 
-    <!--
-    <div class="ui-g-12">
-      <label style="display: block"> Usuario </label>
-      <input type="number" style="width: 85px" name="usuario"
-      [(ngModel)]="usuario">
-      
-    </div>
-    -->
     <div class="ui-g-12">
      
-      <button pButton type="submit" label="Conferir" (click)="pesquisar()" ></button>
+      <button pButton type="submit" label="Conferir" (click)="pesquisar()" [disabled]="!concurso"></button>
       
     </div>
   </form>

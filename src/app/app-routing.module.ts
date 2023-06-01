@@ -9,6 +9,9 @@ import { ConferenciaJogosComponent } from './jogos/conferencia-jogos/conferencia
 import { PaginaNaoEncontradaComponent } from './core/pagina-nao-encontrada.component';
 import { LoginFormComponent } from './seguranca/login-form/login-form.component';
 import { MenuComponent } from './core/menu/menu.component';
+import { NaoAutoriazadoComponent } from './core/nao-autoriazado.component';
+import { RepetirjogosComponent } from './jogos/repetirjogos/repetirjogos.component';
+//import { AuthGuard } from './seguranca/auth.guard';
 
 const routes: Routes = [
 {path: 'jogos', component: MeusJogosComponent},
@@ -20,8 +23,10 @@ const routes: Routes = [
 {path: 'resultado/novo', component: ResultadosComponent},
 {path: 'conferir', component: ConferenciaJogosComponent},
 {path: 'pagina-nao-encontrada', component: PaginaNaoEncontradaComponent},
+{path: 'nao-autorizado', component: NaoAutoriazadoComponent},
 {path: 'login', component: LoginFormComponent},
 {path: 'menu', component: MenuComponent},
+{path: 'espelhar', component: RepetirjogosComponent},
 {path: '**', redirectTo: 'menu'}
 ];
 

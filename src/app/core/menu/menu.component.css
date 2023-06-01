@@ -5,3 +5,29 @@
     padding: 28px;
       
  }
+
+ .centralize-table {
+    display: flex;
+    justify-content: center;
+  }
+
+  .col-centralizado {
+    text-align: center;
+  }
+
+  .col-numeros-grande {
+    width: 70%; 
+    text-align: center !important;
+  }
+
+  .col-par-impar {
+    width: 50%; 
+    text-align: center !important;
+  }
+  
+   .col-numeroConcurso {
+    width: 10%; 
+    text-align: center !important;
+  }
+
+  

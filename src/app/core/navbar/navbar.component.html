@@ -4,7 +4,7 @@
       <div class="ui-g">
         <div class="ui-g-12">
            <a href="javascript:;" class="navbar-toggle" (click)="exibindoMenu = !exibindoMenu"><h1>Menu</h1></a>
-          
+         
         </div>
       </div>
    
@@ -19,10 +19,12 @@
    <li class="navbar-usuario">{{auth.jwtPayload?.user_info.nome}}</li> 
    <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/jogos">Meus jogos</a></li>
    <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/jogo/novo">Novo jogo</a></li>
-   <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/resultados">Resultados</a></li>
+   <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/espelhar">Refazer concurso</a></li>
    <li class="navbar-menuitem" routerLinkActive="ativo" ><a routerLink="/conferir">Conferencia</a></li>
+   <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/resultados">Resultados</a></li>
+   <li class="navbar-menuitem" routerLinkActive="ativo" ><a routerLink="/menu">Inicio</a></li>
    <li class="navbar-menuadmin" routerLinkActive="ativo" *ngIf="auth.temPermissao('ROLE_ADMIN')"><a routerLink="/resultado/novo">Admim</a></li>
-   <li class="navbar-menuitem" routerLinkActive="ativo"><a href="#">Logout </a></li>
+   <li class="navbar-menuitem" routerLinkActive="ativo"><a href="javascript:;" (click)="logout()">Logout </a></li>
 </ul>
 
 

@@ -1,0 +1,35 @@
+ <div class="container">
+    <div class="superior">
+
+       
+      
+      <form #usuarioForm="ngForm" (ngSubmit)="espelhar(usuarioForm)">
+      <div class="ui-g">
+    
+      <div class="ui-g-12">
+        <h1>Repetir jogo </h1>
+      </div>
+    <div class="ui-g-12">
+      <label> Numero do concuso original </label>
+      <input type="number" style="width: 85px" [(ngModel)]="concursoBase" name="numeroConcurso">
+      
+    </div>
+
+    <div class="ui-g-12">
+        <label> Numero do concuso espelho </label>
+        <input type="number" style="width: 85px" [(ngModel)]="concursoEspelho" name="numeroConcurso">
+        
+      </div>
+    
+       
+    <div class="ui-g-12">
+     
+      <button pButton type="submit" label="Cadastrar" [disabled]="!concursoBase || !concursoEspelho"></button>
+     
+    </div>
+    
+    </div>
+  </form> 
+  </div>
+   
+    </div>

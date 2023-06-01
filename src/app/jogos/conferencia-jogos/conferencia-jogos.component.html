@@ -14,7 +14,7 @@
 
     <div class="ui-g-12">
      
-      <button pButton type="submit" label="Conferir" (click)="pesquisarBatidos()"></button>
+      <button pButton type="submit" label="Conferir" (click)="pesquisarBatidos()" [disabled]="!concurso"></button>
       
     </div>
     

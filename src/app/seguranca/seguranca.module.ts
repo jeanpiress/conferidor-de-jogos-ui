@@ -11,7 +11,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { JwtModule } from '@auth0/angular-jwt';
 import { environment } from '../environment/environment';
-import { AuthInterceptor } from 'src/auth.interceptor';
+import { ConferidorHttpInterceptor } from './ConferidorHttpInterceptor';
+
 
 
 export function tokenGetter() {
@@ -46,9 +47,10 @@ export function tokenGetter() {
   providers:[
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor, // Use o interceptor aqui
+      useClass: ConferidorHttpInterceptor, // Use o interceptor aqui
       multi: true
-    }     
+    },
+       
   ]
 
 })
