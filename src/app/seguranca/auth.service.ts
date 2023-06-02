@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable, catchError, map, tap, throwError } from 'rxjs';
+import { environment } from '../../environment/environment';
 
 interface TokenResponse {
   access_token: string;
@@ -12,8 +13,8 @@ interface TokenResponse {
 })
 export class AuthService {
 
-  outhTokenUrl = 'http://localhost:8080/oauth/token';
-  tokenRevokeUrl = 'http://localhost:8080/tokens/revoke'
+  outhTokenUrl: string;
+  tokenRevokeUrl: string;
   jwtPayload: any;
 
   
@@ -22,6 +23,8 @@ export class AuthService {
     private jwtHelper: JwtHelperService
     ) {
       this.carregarToken();
+      this.outhTokenUrl = `${environment.apiUrl}/oauth/token`;
+      this.tokenRevokeUrl = `${environment.apiUrl}/tokens/revoke`;
     }
 
 login(usuario: string, senha: string): Observable<object>{

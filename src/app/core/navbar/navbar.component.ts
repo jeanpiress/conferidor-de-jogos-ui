@@ -8,14 +8,16 @@ import { AuthService } from 'src/app/seguranca/auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
- constructor(public auth: AuthService, 
+export class NavbarComponent{
+
+  exibindoMenu: boolean = false;
+  
+ constructor(
+  public auth: AuthService, 
   private router: Router){}
  
  
-  exibindoMenu: boolean = false;
-
-  criarNovoAccessToken(){
+   criarNovoAccessToken(){
    
   this.auth.obterNovoAccessToken();
   }

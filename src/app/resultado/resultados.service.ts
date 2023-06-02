@@ -9,17 +9,20 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators'
 import { ResultadoCadastro } from './resultados/resultados.component';
 import { Router } from '@angular/router';
+import { environment } from '../../environment/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ResultadosService {
 
-  resultadosUrl = 'http://localhost:8080/resultados';
+  resultadosUrl: string;
 
   constructor(
     private http: HttpClient,
-    private router: Router) { }
+    private router: Router) { 
+      this.resultadosUrl = `${environment.apiUrl}/resultados`;
+    }
 
 
   pesquisarResultado(filtro: any): Observable<any>{

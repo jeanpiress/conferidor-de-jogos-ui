@@ -4,6 +4,6 @@ export const environment = {
     // outras variáveis de ambiente...
 
 
-    tokenWhitelistedDomains:[/localhost:8080/],
-    tokenBlacklistedRoutes: [/\/oauth\/token/]
+    tokenWhitelistedDomains:[ new RegExp('localhost:8080') ],
+    tokenBlacklistedRoutes: [new RegExp('\/oauth\/token')] 
   };

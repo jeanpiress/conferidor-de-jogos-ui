@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { JwtModule } from '@auth0/angular-jwt';
-import { environment } from '../environment/environment';
+import { environment } from '../../environment/environment';
 import { ConferidorHttpInterceptor } from './ConferidorHttpInterceptor';
 
 
@@ -38,8 +38,8 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
       tokenGetter: tokenGetter,
-      allowedDomains: ['localhost:8080'],
-      disallowedRoutes: ['/\/oauth\/token/'],
+      allowedDomains: environment.tokenWhitelistedDomains,
+      disallowedRoutes: environment.tokenBlacklistedRoutes
 
     }
     })

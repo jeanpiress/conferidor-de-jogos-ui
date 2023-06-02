@@ -8,6 +8,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators'
 import { Jogo } from './cadastro-jogos/cadastro-jogos.component';
 import { Router } from '@angular/router';
+import { environment } from '../../environment/environment';
 
 
 
@@ -17,13 +18,16 @@ import { Router } from '@angular/router';
 export class JogosService {
 
   
-  jogoUrl = 'http://localhost:8080/jogos';
-  finaisURL = 'http://localhost:8080/finais';
+  jogoUrl: string;
+  finaisURL: string;
   
 
    constructor(
     private http: HttpClient,
-    private router: Router) { }
+    private router: Router) { 
+      this.jogoUrl = `${environment.apiUrl}/jogos`;
+      this.finaisURL = `${environment.apiUrl}/finais`;
+    }
        
   pesquisar(filtro: any): Observable<any>{
     const params = new HttpParams();

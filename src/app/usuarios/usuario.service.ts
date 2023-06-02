@@ -7,6 +7,7 @@ import { Usuario } from './cadastro-usuario/cadastro-usuario.component';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators'
 import { Router } from '@angular/router';
+import { environment } from '../../environment/environment';
 
 
 @Injectable({
@@ -14,11 +15,13 @@ import { Router } from '@angular/router';
 })
 export class UsuarioService {
 
-  usuarioUrl = 'http://localhost:8080/usuarios';
+  usuarioUrl: string;
 
   constructor(
     private http: HttpClient,
-    private router: Router) { }
+    private router: Router) { 
+      this.usuarioUrl = `${environment.apiUrl}/usuarios`;
+    }
 
 
   adicionarUsuario(usuario: Usuario) : Observable<Usuario>{

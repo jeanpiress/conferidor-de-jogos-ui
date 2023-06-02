@@ -28,6 +28,7 @@ import { ConustaResultadoComponent } from './resultado/conusta-resultado/conusta
 import { PaginaNaoEncontradaComponent } from './core/pagina-nao-encontrada.component';
 import { SegurancaModule } from './seguranca/seguranca.module';
 import { JwtModule } from '@auth0/angular-jwt';
+import { environment } from '../environment/environment';
 
 
 
@@ -44,8 +45,8 @@ import { JwtModule } from '@auth0/angular-jwt';
         tokenGetter: () => {
           return localStorage.getItem('access_token');
         },
-        allowedDomains: ['localhost:8080'],
-        disallowedRoutes: []
+        allowedDomains: environment.tokenWhitelistedDomains,
+        disallowedRoutes: environment.tokenBlacklistedRoutes
       }
     }),
     
