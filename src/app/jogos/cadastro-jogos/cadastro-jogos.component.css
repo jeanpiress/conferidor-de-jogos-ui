@@ -4,6 +4,20 @@
   .cadastro-boton {
     margin-right: 15px;
     padding: 8px;
+    
+        
+   }
+
+   .cadastro-boton4 {
+    margin-right: 15px;
+    padding: 8px;
+    background-color: green !important;
+        
+   }
+
+   .repetir-boton {
+    margin-right: 15px;
+    padding: 8px;
         
    }
 

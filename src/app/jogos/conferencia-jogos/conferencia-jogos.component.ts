@@ -13,6 +13,7 @@ export class ConferenciaJogosComponent implements OnInit{
   concurso = null;
   usuario = parseInt(this.auth.jwtPayload?.user_info.id);
   numerosBatidos = [];
+  listaVazia = [];
 
   constructor(
     private jogosService: JogosService,
@@ -23,7 +24,14 @@ export class ConferenciaJogosComponent implements OnInit{
   ngOnInit(): void {
     
   }
+
+  limparlista(){
+    return this.numerosBatidos = [];
+  }
+
   pesquisarBatidos(){
+    this.limparlista();
+    
     this.jogosService.pesquisarBatidos({concurso: this.concurso, usuario: this.usuario})
        .subscribe(numerosBatidos => this.numerosBatidos = numerosBatidos);
        
