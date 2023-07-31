@@ -11,19 +11,19 @@
 
     <div class="col-12 p-fluid">
       
-      <input type="text" placeholder="Nome" style="width: 480px"  name="nome" [(ngModel)]="usuario.nome" required>
+      <input pInputText type="text" placeholder="Nome" style="width: 480px"  name="nome" [(ngModel)]="usuario.nome" required>
       <br>
       <br>
             
       
-      <input type="text" placeholder="E-mail" style="width: 480px" name="email" [(ngModel)]="usuario.email" required email>
+      <input pInputText type="text" placeholder="E-mail" style="width: 480px" name="email" [(ngModel)]="usuario.email" required email>
       <br>
       <br>
 
       
       
       
-      <input type="text" placeholder="Senha" style="width: 480px" name="senha" [(ngModel)]="usuario.senha" required>
+      <input pInputText type="text" placeholder="Senha" style="width: 480px" name="senha" [(ngModel)]="usuario.senha" required>
       <br>
       
 
@@ -36,6 +36,11 @@
     <div class="ui-g-12">
      
       <button pButton type="submit" label="Cadastrar" [disabled]="!usuarioForm.valid"></button>
+      <br>
+      <br>
+      <div class="col-12">
+        <a routerLinkActive="ativo" routerLink="login">Já tenho cadastro</a>
+    </div>
       
     </div>
     
