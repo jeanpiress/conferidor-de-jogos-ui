@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 export class MenuComponent implements OnInit {
 
   numeros = [];
-  constancia = { numerosRepetidos: null, numerosNaoRepetidos: null };
+  constancia3 = { numerosRepetidos: null, numerosNaoRepetidos: null };
+  constancia4 = { numerosRepetidos: null, numerosNaoRepetidos: null };
 
   constructor(
     private menuservice: MenuService,
@@ -20,7 +21,8 @@ export class MenuComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-     this.pesquisarConstancia();
+      this.pesquisarConstancia3();
+     this.pesquisarConstancia4();
      this.pesquisarResultados();
     }
 
@@ -32,8 +34,13 @@ export class MenuComponent implements OnInit {
             this.router.navigate(['/login']);});
     }
 
-    pesquisarConstancia(){
-      this.menuservice.presquisarConstancia()
-         .subscribe(constancia => this.constancia = constancia);
+    pesquisarConstancia3(){
+      this.menuservice.presquisarConstancia3()
+         .subscribe(constancia3 => this.constancia3 = constancia3);
+    } 
+   
+    pesquisarConstancia4(){
+      this.menuservice.presquisarConstancia4()
+         .subscribe(constancia4 => this.constancia4 = constancia4);
     }  
 }

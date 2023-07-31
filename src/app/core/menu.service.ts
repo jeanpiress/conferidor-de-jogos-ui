@@ -9,7 +9,8 @@ import { environment } from '../../environment/environment';
 })
 export class MenuService {
   UltimosResultados: string;
-  constancia: string;
+  constancia3: string;
+  constancia4: string;
   
 
    constructor(
@@ -17,7 +18,8 @@ export class MenuService {
     private router: Router,)
      {
       this.UltimosResultados = `${environment.apiUrl}/resultados/ultimosResultados`; 
-      this.constancia = `${environment.apiUrl}/resultados/constancia`;
+      this.constancia3 = `${environment.apiUrl}/resultados/constancia3`;
+      this.constancia4 = `${environment.apiUrl}/resultados/constancia`;
        
     }
 
@@ -25,7 +27,10 @@ export class MenuService {
       return this.http.get(`${this.UltimosResultados}`);
      }
 
-     presquisarConstancia(): Observable<any>{
-      return this.http.get(`${this.constancia}`);
+     presquisarConstancia4(): Observable<any>{
+      return this.http.get(`${this.constancia4}`);
+     }
+     presquisarConstancia3(): Observable<any>{
+      return this.http.get(`${this.constancia3}`);
      }
 }
