@@ -58,21 +58,20 @@ get editando(){
   return Boolean(this.jogo.usuario.id) 
 }
 
-  carregarJogo(id: number){
+carregarJogo(id: number){
     this.JogosService.pesquisarPorId(id)
     .subscribe(jogo => this.jogo = jogo);
-      }
+ }
 
-  salvar(form: NgForm){
+salvar(form: NgForm){
   this.JogosService.adicionar(this.jogo)
  .subscribe(() => {this.snackBar.open('Jogo cadastrado', 'Fechar', {
   duration: 3000, // duração em milissegundos
 });}),
 
- form.reset();
- 
- this.jogo = new Jogo();
- 
+  this.jogo = new Jogo();
+  
+  this.router.navigate(['jogo/novo']);
 }
 
 
