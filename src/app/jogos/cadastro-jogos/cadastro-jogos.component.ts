@@ -71,7 +71,7 @@ salvar(form: NgForm){
 
   this.jogo = new Jogo();
   
-  this.router.navigate(['jogo/novo']);
+  this.router.navigate(['menu']);
 }
 
 
